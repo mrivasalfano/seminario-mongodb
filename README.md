@@ -19,31 +19,31 @@ Lista de comandos utilizados:
 		"nombre": "Juan",
 		"apellido": "Pérez",
 		"posicion":  "Delantero",
-		"fecha_nacimiento": Date("1995-08-07")  
+		"fecha_nacimiento": new Date("1995-08-07")  
 	},
 	{
 		"nombre": "Gabriel",
 		"apellido": "Rolando",
 		"posicion":  "Central",
-		"fecha_nacimiento": Date("1997-04-22")  
+		"fecha_nacimiento": new Date("1997-04-22")  
 	},
 	{
 		"nombre": "Omar",
 		"apellido": "Lapenta",
 		"posicion":  "Arquero",
-		"fecha_nacimiento": Date("1965-01-02")  
+		"fecha_nacimiento": new Date("1965-01-02")  
 	},
 	{
 		"nombre": "Luciano",
 		"apellido": "Martin",
 		"posicion":  "Delantero",
-		"fecha_nacimiento": Date("1990-10-05")  
+		"fecha_nacimiento": new Date("1990-10-05")  
 	},
 	{
 		"nombre": "Martin",
 		"apellido": "Rodríguez",
 		"posicion":  "Defensor",
-		"fecha_nacimiento": Date("1985-12-29")  
+		"fecha_nacimiento": new Date("1985-12-29")  
 	}
 ])
 
@@ -51,3 +51,28 @@ Lista de comandos utilizados:
 -db.players.find()
 
 7) Crear otras collections con documentos (ej. teams, games, etc).
+
+Creo equipos:
+-db.createCollection("teams")
+-db.teams.insertMany([
+	{
+		"nombre": "Juventus",
+		"directorTecnico": "Diego Maradona"
+	},
+	{
+		"nombre": "Lanús",
+		"directorTecnico": "Ricardo Miller"
+	},
+	{
+		"nombre": "Boca",
+		"directorTecnico": "El más grande"
+	}
+])
+
+Creo un partido:
+-db.createCollection("games")
+-db.games.insert({
+	"equipo_1": "Juventus", 
+	"equipo_2": "Milan",
+	"fecha": new Date("2020-10-25")
+})
