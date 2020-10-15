@@ -1,10 +1,3 @@
-
-# seminario-mongodb
-
-# Actividad 1
-
-### Lista de comandos utilizados:# seminario-mongodb
-
 # Actividad 1
 
 ### Lista de comandos utilizados:
@@ -57,27 +50,27 @@
 
 ##### 7) Crear otras collections con documentos (ej. teams, games, etc).
 
-> Creo equipos:
-> -db.createCollection("teams")
-> -db.teams.insertMany([
-	{
-		"nombre": "Juventus",
-		"directorTecnico": "Diego Maradona"
-	},
-	{
-		"nombre": "Lanús",
-		"directorTecnico": "Ricardo Miller"
-	},
-	{
-		"nombre": "Boca",
-		"directorTecnico": "El más grande"
-	}
-])
+> Creo equipos:  
+> -db.createCollection("teams")  
+> -db.teams.insertMany([  
+	{  
+		"nombre": "Juventus",  
+		"directorTecnico": "Diego Maradona"  
+	},  
+	{  
+		"nombre": "Lanús",  
+		"directorTecnico": "Ricardo Miller"  
+	},  
+	{  
+		"nombre": "Boca",  
+		"directorTecnico": "El más grande"  
+	}  
+])  
 
-> Creo un partido:
-> -db.createCollection("games")
-> -db.games.insert({
-	"equipo_1": "Juventus", 
-	"equipo_2": "Milan",
-	"fecha": new Date("2020-10-25")
+> Creo un partido:  
+> -db.createCollection("games")  
+> -db.games.insert({  
+	"equipo_1": "Juventus",   
+	"equipo_2": "Milan",  
+	"fecha": new Date("2020-10-25")  
 })
