@@ -23,81 +23,61 @@
   
   Retorno: WriteResult({ "nInserted" : 1 })
   
-  -db.movies.insert([]);  
+> -db.movies.insert([  
+  {  
+  "title": "Carrera contra la muerte",
+  "year": 1987,  
+  "rating": 4.0,  
+  "genre": "Ciencia Ficción",  
+  "description": "La película, ambientada en un distópico año 2017, relata los sucesos ocurridos en un programa de televisión llamado The Running Man (traducido       literalmente como El Corredor) donde criminales convictos deben escapar de asesinos profesionales que los quieren llevar a la muerte.",  
+  "actors": ["Arnold Schwarzenegger", "María Conchita Alonso"],  
+  "country": "Estados unidos",  
+  "income": 38122105,  
+  "duration": 101 
+  },  
+  {  
+  "title": "Enamorándose",
+  "year": 1984,  
+  "rating": 4.1,  
+  "genre": "Romance",  
+  "description": "Mientras hacen las compras para sus respectivas familias en Navidad el arquitecto Frank Raftis (De Niro) y la bella artista gráfica Molly Gilmore (Streep) se cruzan y confunden sus regalos de Navidad. Lo que comienza como una amistad agradable se convierte en un romance.",  
+  "actors": ["Meryl Streep", "Robert De Niro"],  
+  "country": "Estados unidos",  
+  "income": 11129057,  
+  "duration": 106  
+  }
+  ]);  
   
-  Retorno:
+  Retorno:  
+  BulkWriteResult({  
+        "writeErrors" : [ ],  
+        "writeConcernErrors" : [ ],  
+        "nInserted" : 2,  
+        "nUpserted" : 0,  
+        "nMatched" : 0,  
+        "nModified" : 0,  
+        "nRemoved" : 0,  
+        "upserted" : [ ]  
+  })
   
-  -db.movies.insertOne();  
+> -db.movies.insertOne({  
+    "title": "El clán",  
+    "year": 2015,  
+    "rating": 4.2,  
+    "genre": "Drama",  
+    "description": "La historia está basada en el caso policial del Clan Puccio, que conmovió a la sociedad argentina a comienzos de los años 80.",  
+    "actors": ["Guillermo Francella", "Peter Lanzani"],  
+    "country": "Argentina",  
+    "income": 20381995,  
+    "duration": 110  
+  });  
   
   Retorno: 
+  {  
+  "acknowledged" : true,  
+  "insertedId" : ObjectId("5f918437f2fdb8aecb4be001")  
+  }
   
-  -db.movies.insertMany([]);
+> -db.movies.insertMany([]);
   
   Retorno:
-
-##### 4) Crear una nueva collection llamada players.
-> -db.createCollection("players")
-
-##### 5) Insertar 5 documentos en la collection players con datos básicos (nombre, apellido, posición, fecha de nacimiento, etc).
-> -db.players.insertMany([  
-	{  
-	"nombre": "Juan",  
-	"apellido": "Pérez",  
-	"posicion":  "Delantero",  
-	"fecha_nacimiento": new Date("1995-08-07")  
-	},  
-	{  
-		"nombre": "Gabriel",  
-		"apellido": "Rolando",  
-		"posicion":  "Central",  
-		"fecha_nacimiento": new Date("1997-04-22")  
-	},  
-	{  
-		"nombre": "Omar",  
-		"apellido": "Lapenta",  
-		"posicion":  "Arquero",  
-		"fecha_nacimiento": new Date("1965-01-02")  
-	},  
-	{  
-		"nombre": "Luciano",  
-		"apellido": "Martin",  
-		"posicion":  "Delantero",  
-		"fecha_nacimiento": new Date("1990-10-05")  
-	},  
-	{  
-		"nombre": "Martin",  
-		"apellido": "Rodríguez",  
-		"posicion":  "Defensor",  
-		"fecha_nacimiento": new Date("1985-12-29")  
-	}  
-])
-
-##### 6) Listar todos los documentos de la collection players.
-> -db.players.find()
-
-##### 7) Crear otras collections con documentos (ej. teams, games, etc).
-
-> Creo equipos:  
-> -db.createCollection("teams")  
-> -db.teams.insertMany([  
-	{  
-		"nombre": "Juventus",  
-		"directorTecnico": "Diego Maradona"  
-	},  
-	{  
-		"nombre": "Lanús",  
-		"directorTecnico": "Ricardo Miller"  
-	},  
-	{  
-		"nombre": "Boca",  
-		"directorTecnico": "El más grande"  
-	}  
-])  
-
-> Creo un partido:  
-> -db.createCollection("games")  
-> -db.games.insert({  
-	"equipo_1": "Juventus",   
-	"equipo_2": "Milan",  
-	"fecha": new Date("2020-10-25")  
-})
