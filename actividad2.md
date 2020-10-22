@@ -78,6 +78,36 @@
   "insertedId" : ObjectId("5f918437f2fdb8aecb4be001")  
   }
   
-> -db.movies.insertMany([]);
+> -db.movies.insertMany([  
+  {  
+    "title": "El Gato con Botas",  
+    "year": 2011,  
+    "rating": 4.7,  
+    "genre": "Animacion",  
+    "description": "Gato es un fugitivo de la justicia que se dedica a cometer robos para subsistir, sin robar a personas de bajos recursos o a iglesias.",  
+    "actors": [],  
+    "country": "Estados Unidos",  
+    "income": 554709226,  
+    "duration": 90  
+  },  
+  {  
+    "title": "Alicia en el país de las maravillas",  
+    "year": 2010,  
+    "rating": 4.6,  
+    "genre": "Fantasía",  
+    "description": "La pequeña Alicia Kingsleigh, tiene una pesadilla sobre un mundo fantástico de seres extraños, relatando a su padre, Charles Kingsleigh lo que había en ese lugar. Pero él la consuela diciéndole que los sueños no pueden lastimarle.",  
+    "actors": ["Mia Wasikowska", "Johnny Depp"],  
+    "country": "Estados Unidos",  
+    "income": 1025467110,  
+    "duration": 108  
+  }  
+  ]);
   
-  Retorno:
+  Retorno:  
+  {  
+        "acknowledged" : true,  
+        "insertedIds" : [  
+                ObjectId("5f918945f2fdb8aecb4be004"),  
+                ObjectId("5f918945f2fdb8aecb4be005")  
+        ]  
+  }
