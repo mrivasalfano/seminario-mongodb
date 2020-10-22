@@ -1,5 +1,7 @@
 # Actividad 1
 
+[Inicio](README.md)
+
 ### Lista de comandos utilizados:
 
 ##### 2) Conectarse a MongoDB vía CLI.
