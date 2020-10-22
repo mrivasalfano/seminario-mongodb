@@ -19,7 +19,7 @@
     "country": "Estados unidos",  
     "income": 589390500,  
     "duration": 98  
-  });
+  })
   
   Retorno: WriteResult({ "nInserted" : 1 })
   
@@ -46,7 +46,7 @@
   "income": 11129057,  
   "duration": 106  
   }
-  ]);  
+  ])  
   
   Retorno:  
   BulkWriteResult({  
@@ -70,7 +70,7 @@
     "country": "Argentina",  
     "income": 20381995,  
     "duration": 110  
-  });  
+  })
   
   Retorno: 
   {  
@@ -101,7 +101,7 @@
     "income": 1025467110,  
     "duration": 108  
   }  
-  ]);
+  ])
   
   Retorno:  
   {  
@@ -111,3 +111,30 @@
                 ObjectId("5f918945f2fdb8aecb4be005")  
         ]  
   }
+  
+#### 4) Actualizar películas agregando el field highlighted=true a aquellas con rating > 4.5
+>  -db.movies.updateMany(  
+    { rating: {$gt: 4.5} },    
+    { $set: { highlighted : true }  
+    })
+    
+   Retorno: { "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+   
+#### 5) Actualizar películas cambiando el genre “drama” por “bored”
+>  -db.movies.updateMany(  
+    { genre: "Drama" },    
+    { $set: { genre : "Aburrida" }  
+    })
+    
+   Retorno: { "acknowledged" : true, "matchedCount" : 3, "modifiedCount" : 3 }
+   
+#### 6) Borrar todas las películas que tengan más de 30 años
+>  -db.movies.deleteMany({ year: {$lt: 2020 - 30 })
+    
+   Retorno: { "acknowledged" : true, "deletedCount" : 2 }  
+   
+#### 7) Buscar todas las películas argentinas
+>  -db.movies.find({ country: "Argentina" })
+
+#### 8) Buscar todas las películas de acción con un buen rating (ej. > 4.0) que hayan salido los últimos 2 años
+>  -db.movies.find({ rating: { $gt: 4.0 }, year: { $gt: 2020-3 } })
