@@ -9,13 +9,31 @@
   -db.createCollection("movies")
 
 ##### 3) Agregar películas usando insert(), insertOne() & insertMany().
-> -db.movies.insert({
-    titulo: "Los hombres de negro"
-  });  
-        Retorno: 
+> -db.movies.insert({  
+    "title": "Los hombres de negro",  
+    "year": 1997,  
+    "rating": 4.5,  
+    "genre": "Acción",  
+    "description": "Narra la historia de una organización secreta que vigila la actividad alienígena en la Tierra.",  
+    "actors": ["Tommy Lee Jones", "Will Smith"],  
+    "country": "Estados unidos",  
+    "income": 589390500,  
+    "duration": 98  
+  });
+  
+  Retorno: WriteResult({ "nInserted" : 1 })
+  
   -db.movies.insert([]);  
+  
+  Retorno:
+  
   -db.movies.insertOne();  
+  
+  Retorno: 
+  
   -db.movies.insertMany([]);
+  
+  Retorno:
 
 ##### 4) Crear una nueva collection llamada players.
 > -db.createCollection("players")
