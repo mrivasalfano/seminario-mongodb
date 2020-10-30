@@ -28,10 +28,10 @@
    -db.movies.find({ rating: 3.7 }).explain("executionStats").executionStats.executionTimeMillis  
    10  
    
-   Creo índice:  
+>  Creo índice:  
    -db.movies.createIndex({ rating: 1 })  
    
-   Tiempo en milisegundos con índice creado:  
+>  Tiempo en milisegundos con índice creado:  
    -db.movies.find({ rating: 3.7 }).explain("executionStats").executionStats.executionTimeMillis  
    2  
    
